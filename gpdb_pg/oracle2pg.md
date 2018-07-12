@@ -6,7 +6,7 @@
 
 ## 一、准备迁移数据
 
-###导出oracle数据库
+### 导出oracle数据库
 ```
 expdp dbuser directory=DATA_PUMP_DIR dumpfile=dbxxxx.dmp logfile=dbxxxx.log SCHEMAS=dbxxxx
 ```
@@ -15,12 +15,12 @@ expdp dbuser directory=DATA_PUMP_DIR dumpfile=dbxxxx.dmp logfile=dbxxxx.log SCHE
 
 ## 二、准备镜像
 
-###获取oracle镜像
+### 获取oracle镜像
 ```
 docker pull alexeiled/docker-oracle-xe-11g
 ```
 
-###获取postgresql镜像
+### 获取postgresql镜像
 ```
 docker pull centos/postgresql-96-centos7
 ```
