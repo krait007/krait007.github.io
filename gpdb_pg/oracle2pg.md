@@ -196,14 +196,62 @@ dbxxxx=> \i /data/dbxxxx_data.sql
 各个应用系统相差很大，具体问题具体解决。例如：
 
 1. Error committing transaction.  Cause: org.postgresql.util.PSQLException: Cannot commit when autoCommit is enabled
- 数据源配置：        <property name="defaultAutoCommit" value="false"></property>  
+   数据源配置：        <property name="defaultAutoCommit" value="false"></property>  
 
+1. oracle中字段名是大写的，迁移后变成小写  
 
-2. oracle中字段名是大写的，迁移后变成小写  
+2. oracle序列访问方式为 SEQ_XXXX.nextval postgresql需要修改为 nextval(seq_xxxx);
 
-3. oracle序列访问方式为 SEQ_XXXX.nextval postgresql需要修改为 nextval(seq_xxxx);
+3. 当前时间: sysdate 修改为 now()
 
-4. 当前时间: sysdate 修改为 now()
+4. nvl 修改为 coalesce
 
-5. nvl 修改为 coalesce
-        
+   
+
+## 五、安装oracle兼容插件，减少应用sql修改
+
+```
+#下载：orafce 3.6.1 
+https://pgxn.org/dist/orafce/
+
+#编译 放到postgresql源码编译环境
+unzip orafce-3.6.1.zip
+cd orafce-3.6.1
+make -j 2
+make install
+
+cd $PG_BIN
+
+#打包- pg10
+tar czvf orafce-3.6.1-bin.tar.gz lib/postgresql/orafce.so share/postgresql/extension/orafce* doc/postgresql/extension/*.orafce
+lib/postgresql/orafce.so
+share/postgresql/extension/orafce--3.2--3.3.sql
+share/postgresql/extension/orafce--3.3--3.4.sql
+share/postgresql/extension/orafce--3.4--3.5.sql
+share/postgresql/extension/orafce--3.5--3.6.sql
+share/postgresql/extension/orafce--3.6.sql
+share/postgresql/extension/orafce.control
+doc/postgresql/extension/COPYRIGHT.orafce
+doc/postgresql/extension/INSTALL.orafce
+
+#安装
+到目标数据库: 例如 pg10
+cp lib/postgresql/orafce.so /usr/lib/postgresql/10/lib/
+cp share/postgresql/extension/orafce* /usr/share/postgresql/10/extension/
+
+#登录目标数据库
+dbxxxx=> create extension orafce;
+
+#修改权限
+dbxxxx=>grant all schema oracle to public;
+dbxxxx=>alter user xxxx set search_path="$user", public, oracle;
+
+```
+
+使用兼容函数集后， 原应用的sql修改量会大大减少，比如 to_char, nvl,  日期函数等都可以继续使用。 注意点:
+
+```
+1. postgresql大版本差异比较大，所以 编译环境的pg版本和目标数据库的版本最好一致
+2. orafce实现了很大一部分函数，但不是全部，比如round函数没有。
+```
+
