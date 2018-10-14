@@ -206,6 +206,8 @@ dbxxxx=> \i /data/dbxxxx_data.sql
 
 4. nvl 修改为 coalesce
 
+5. 分页:  offset idx  limit pagesize
+
    
 
 ## 五、安装oracle兼容插件，减少应用sql修改
