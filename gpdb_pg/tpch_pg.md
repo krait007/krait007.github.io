@@ -1,12 +1,12 @@
 ## TPC-H Tool for Postgresql 
 
 ### 环境
-
-OS：Linux（Centos 7.4） 
+```
+OS：Linux（Centos 7.4）
 TPC-H：2.17.3 
 PostgreSQL：10.1
 TPC-H Download：<http://www.tpc.org/tpch/>
-
+```
 
 
 ### 一.编译生成: dbgen、qgen
