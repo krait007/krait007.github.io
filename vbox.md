@@ -40,3 +40,8 @@ VBoxManage controlvm <vm_name> acpipowerbutton
 ```
 VBoxManage controlvm <vm_name> poweroff
 ```
+
+### 删除虚拟机
+```
+VBoxManage unregistervm     <uuid|vmname> [--delete]
+```
