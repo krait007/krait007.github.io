@@ -100,4 +100,18 @@ go get golang.org/x/tour
 
 
 
+Config Ignore Notebook Lid Switch
+
+```
+/etc/systemd/logind.conf
+HandleLidSwitch=ignore
+
+systemctl restart systemd-logind
+
+#manul enter standby mode
+systemctl suspend
+```
+
+
+
 ### 
