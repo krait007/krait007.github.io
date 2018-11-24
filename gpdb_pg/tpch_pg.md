@@ -179,11 +179,15 @@ sed -i "s/^M//g" workload.sql
 ### 六. 执行workload
 
 ```bash
+/usr/bin/time -f "total=%e" -o result.log  psql tpcd < workload.sql >/dev/null 2>&1 &
+
+
 #start the processes 
 for c in `seq 1 4`; do /usr/bin/time -f "total=%e" -o result-$c.log \
 psql tpcd < workload.sql >/dev/null 2>&1 & done; 
 
 # wait for the processes 
 for p in `jobs -p`; do wait $p; done;
+
 ```
 
