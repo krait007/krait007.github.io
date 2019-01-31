@@ -27,7 +27,7 @@
 
 ### Install tools
 
-```
+```bash
 yum install -y net-tools sysstat ethtool telnet
 yum install -y git
 
@@ -37,7 +37,7 @@ yum install -y git
 
 ### Configure CentOS yum repo
 
-```
+```bash
 yum install -y wget
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 cd /etc/yum.repos.d/
@@ -46,6 +46,17 @@ yum makecache
 
 #update os system
 yum -y update
+```
+
+
+
+### Install GNOME Desktop
+
+```bash
+#get group install list
+yum grouplist
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools"
+
 ```
 
 
@@ -103,6 +114,14 @@ systemctl restart docker
 
 
 
+### Install Kvm
+
+```bash
+yum install kvm libvirt python-virtinst qemu-kvm virt-viewer tunctl bridge-utils avahi dmidecode qemu-kvm-tools virt-manager qemu-img virt-install net-tools libguestfs-tools -y
+```
+
+
+
 ### Install golang
 
 ```
@@ -133,7 +152,15 @@ go get golang.org/x/tour
 
 
 
-Config Ignore Notebook Lid Switch
+Install gcc
+
+```
+yum install -y gcc gcc-c++ gdb
+```
+
+
+
+### Config Ignore Notebook Lid Switch
 
 ```
 /etc/systemd/logind.conf
