@@ -63,7 +63,7 @@ yum groupinstall "GNOME Desktop" "Graphical Administration Tools"
 
 ### Configure Firewall
 
-```
+```bash
 firewall-cmd --state
 firewall-cmd --get-service
 firewall-cmd --reload
@@ -76,6 +76,17 @@ firewall-cmd --zone=public --add-port=8080-8081/tcp
 #add service
 firewall-cmd --zone=public --add-service=https 
 firewall-cmd --permanent --zone=public --add-service=https
+
+#add-rich-rule
+firewall-cmd --permanent --zone=public --add-rich-rule="rule family="ipv4" source address="192.168.0.4/24" service name="http" accept"
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.1.1/24" port protocol="tcp" port="3306" accept"
+firewall-cmd --reload
+
+#端口转发，将到本机的3306端口的访问转发到192.168.1.1服务器的3306端口
+## 开启伪装IP
+firewall-cmd --permanent --add-masquerade
+## 配置端口转发
+firewall-cmd --permanent --add-forward-port=3306:proto=tcp:toaddr=192.168.1.2:toport=13306
 ```
 
 
