@@ -33,6 +33,21 @@ CREATE EXTENSION extension_name SCHEMA my_extensions;
 ```
 
 ## Create Extensions
+
+> local page
+>
+> [Writing Postgres Extensions - the Basics](/gpdb_pg/extensions/WritingPostgresExtensions-i-TheBasics)
+
+> [Writing Postgres Extensions - Types and Operators](/gpdb_pg/extensions/WritingPostgresExtensions-ii-TypesAndOperators)
+
+> [Writing Postgres Extensions - Debugging](/gpdb_pg/extensions/WritingPostgresExtensions-iii-Debugging)
+
+> [Writing Postgres Extensions - Testing](/gpdb_pg/extensions/WritingPostgresExtensions-iv-Testing)
+
+> [Writing Postgres Extensions Code Organization and Versioning](/gpdb_pg/extensions/WritingPostgresExtensions-v-CodeOrganizationAndVersioning)
+>
+> #source origin
+
 > [Writing Postgres Extensions - the Basics](http://big-elephants.com/2015-10/writing-postgres-extensions-part-i/)
 
 > [Writing Postgres Extensions - Types and Operators](http://big-elephants.com/2015-10/writing-postgres-extensions-part-ii/)
