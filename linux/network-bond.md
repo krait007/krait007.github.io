@@ -28,7 +28,53 @@ nmcli connection add type bond-slave ifname enoxxxxx master bond0
 
 
 
+# ubuntu network bond config
 
+### install fenslave
+
+```
+sudo dpkg -l | grep fenslave
+sudo apt-get install ifenslave -y
+```
+
+### 加载绑定内核模块
+
+```bash
+sudo modprobe bonding 
+sudo lsmod | grep bonding
+
+sudo vi /etc/modules
+bonding       #添加的内容，使该模块开机启动             
+
+```
+
+### 配置网络接口
+
+```bash
+sudo vi /etc/network/interfaces
+-----------------------------------
+auto eno3
+iface eno3 inet manual
+bond-master bond0
+
+auto eno4
+iface eno4 inet manual
+bond-master bond0
+
+auto bond0
+iface bond0 inet static
+onboot yes
+address 192.168.1.250
+gateway 192.168.1.1
+netmask 255.255.255.0
+bond-mode 6
+bond-miimon 100
+bond-slaves  eno3  eno4
+
+---------------------------------
+#重启网络服务
+sudo /etc/init.d/networking restart
+```
 
 
 
