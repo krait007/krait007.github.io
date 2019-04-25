@@ -5,3 +5,5 @@
 * [Extensions](/gpdb_pg/extensions)
 * [Oracle2Pg](/gpdb_pg/oracle2pg)
 * [TPC-H 4 pg](/gpdb_pg/tpch_pg)
+* [PostgresqlHA](/gpdb_pg/postgresql_ha)
+
