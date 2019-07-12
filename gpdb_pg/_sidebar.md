@@ -7,3 +7,5 @@
 * [TPC-H 4 pg](/gpdb_pg/tpch_pg)
 * [PostgresqlHA](/gpdb_pg/postgresql_ha)
 
+- [PostgresqlIntroduce](/gpdb_pg/pg_introduce.md)
+
