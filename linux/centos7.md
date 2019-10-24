@@ -131,6 +131,14 @@ systemctl restart docker
 yum install kvm libvirt python-virtinst qemu-kvm virt-viewer tunctl bridge-utils avahi dmidecode qemu-kvm-tools virt-manager qemu-img virt-install net-tools libguestfs-tools -y
 ```
 
+### Create a Sudo User 
+
+```bash
+useradd username
+passwd username
+usermod -aG wheel username
+```
+
 
 
 ### Install golang
