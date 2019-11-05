@@ -83,10 +83,13 @@ firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192
 firewall-cmd --reload
 
 #端口转发，将到本机的3306端口的访问转发到192.168.1.1服务器的3306端口
-## 开启伪装IP
+## 开启伪装IP(开启后才能端口转发)
 firewall-cmd --permanent --add-masquerade
 ## 配置端口转发
-firewall-cmd --permanent --add-forward-port=3306:proto=tcp:toaddr=192.168.1.2:toport=13306
+firewall-cmd --permanent --add-forward-port=port=8001:proto=tcp:toport=8080:toaddr=192.168.31.130
+
+# /etc/sysctl.conf
+net.ipv4.ip_forward = 1
 ```
 
 
