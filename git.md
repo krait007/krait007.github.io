@@ -43,6 +43,26 @@ git cherry-pick commitid...tagname
 git  add  xxx
 
 #cherry-pick continue
-git cherry-pick --contiue
+git cherry-pick --continue
 
+```
+```
+$ 
+#git cherry-pick --continue
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+and then use:
+
+    git cherry-pick --continue
+
+to resume cherry-picking the remaining commits.
+If you wish to skip this commit, use:
+
+    git cherry-pick --skip
+
+git commit --allow-empty
+git cherry-pick --continue
 ```
