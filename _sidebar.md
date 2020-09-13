@@ -5,5 +5,6 @@
 * [Markdown](/markdown.md)
 * [VirtualBox](/vbox.md)
 * [Linux](/linux/)
-* [Minio](/minio.md/)
+* [Minio](/minio.md)
+* [Awesome List](/awesome_url.md)
 
