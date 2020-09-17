@@ -95,3 +95,32 @@ A collection of awesome things regarding the React ecosystem.
 
 https://github.com/enaqx/awesome-react
 
+
+
+### Awesome CTF
+
+A curated list of [Capture The Flag](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) (CTF) frameworks, libraries, resources, softwares and tutorials. This list aims to help starters as well as seasoned CTF players to find everything related to CTFs at one place.
+
+[awesome-ctf](https://github.com/apsdehal/awesome-ctf)
+
+https://github.com/apsdehal/awesome-ctf
+
+### Software-Security-Learning
+
+[Software-Security-Learning](https://github.com/CHYbeta/Software-Security-Learning)
+
+https://github.com/CHYbeta/Software-Security-Learning
+
+
+
+### Github Ctfs
+
+CTF challenges + write-ups archive maintained by the community
+
+https://github.com/ctfs/
+
+
+
+### Linux Commands
+
+https://github.com/jaywcjlove/linux-command
