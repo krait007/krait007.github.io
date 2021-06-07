@@ -8,4 +8,6 @@
 * [PostgresqlHA](/gpdb_pg/postgresql_ha)
 
 * [PostgresqlIntroduce](/gpdb_pg/pg_introduce.md)
-* [Operation&Maintenance](/gpdb_pg/o&m)
+* [Operation&Maintenance](/gpdb_pg/o&m/)
+* [Generate Test Data](/gpdb_pg/generate_test_data.md)
+* [MVCC](/gpdb_pg/mvcc.md)
